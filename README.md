@@ -1,1 +1,1 @@
-This repo contains practice files I create in my journey to conquering JavaScript.
+This repo contains practice files I create on my journey to conquering JavaScript.
