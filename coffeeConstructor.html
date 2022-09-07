@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coffee maker</title>
+</head>
+<body>
+    <h1>making a coffee machine</h1>
+
+    <script>
+        function Coffee(roast, ounces) {
+            this.roast = roast;
+            this.ounces = ounces;
+            this.getSize = function(ounces) {
+                if (this.ounces === 8) {
+                    return "small";
+                } else if (this.ounces === 12) {
+                    return "medium";
+                } else if (this.ounces === 16) {
+                    return "large";
+                }
+            };
+            this.toString = function(roast) {
+              return `You've ordered a ${this.getSize()} ${this.roast} coffee.`;
+            }
+        }
+
+        let houseBlend = new Coffee("House Blend", 12);
+        console.log(houseBlend.toString());
+
+        let darkRoast = new Coffee("Dark Roast", 16);
+        console.log(darkRoast.toString());
+    </script>
+</body>
+</html>

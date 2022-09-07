@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instanceof</title>
+</head>
+<body>
+    <h1>Checking if a function is an instance of a constructor</h1>
+
+    <script>
+        // check if the dogs were created by the Dog constructor
+        /*function dogCatcher(obj) {
+            if (obj instanceof Dog) {
+                return true;
+            } 
+            return false;
+        }
+
+            // create a Cat constructor and create a couple of cat using the Cat constructor
+        function Cat(name, breed, weight) {
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
+        }
+        let meow = new Cat("Meow", "Siamese", 10);
+        let whiskers = new Cat("Whiskers", "Mixed", 12);
+
+        // create an object literal dog
+        let fido = {name: "Fido", breed: "Mixed", weight: 12};
+
+        // create a Dog constructor and create a couple of dogs using the Dog constructor
+        function Dog(name, breed, weight) {
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
+            this.bark = function() {
+                if (this.weight > 25) {
+                    alert(`${this.name} says Woof!`);
+                } else {
+                    alert(`${this.name} says Yip!`);
+                }
+            };
+        }
+        let fluffy = new Dog("Fluffy", "Poodle", 30);
+        let spot = new Dog("Spot", "Chihuahua", 10);
+
+        // assign all cats and dogs to an array variable named dogs
+        let dogs = [meow, whiskers, fido, fluffy, spot];
+
+        // go through the dogs array to check if the individual "dogs" were created using the Dog constructor
+        for (let i = 0; i < dogs.length; i++) {
+            if (dogCatcher(dogs[i])) {
+                console.log(`${dogs[i].name} is a dog!`);
+            }
+        }*/
+
+        // making my dream car. Lol.
+        function CarPrototype(params) {
+            this.make = params.make;
+            this.model = params.model;
+            this.year = params.year;
+            this.color = params.color;
+            this.interiorColor = params.interiorColor;
+            this.engine = params.engine;
+            this.coupe = params.coupe;
+            this.starHeadliner = params.starHeadliner;
+            this.started = false;
+            this.start = function() {
+                this.started = true;
+                console.log("Your engine is now running.");
+            };
+            
+            this.drive = function() {
+                if (this.started) {
+                    console.log(`${this.model} says zoom!`);
+                } else {
+                    console.log("Start the engine before you drive!");
+                }
+            };
+
+            this.stop = function() {
+                if (this.started) {
+                    console.log("Apply brakes and turn off your beautiful engine.");
+                } else {
+                    console.log("The engine is not running.");
+                }
+                this.started = false;
+            };
+        }
+
+        let ghostParams = {
+            make: "Rolls Royce",
+            model: "Ghost Black Badge",
+            year: 2021,
+            color: "black with green accents",
+            interiorColor: "green",
+            engine: "W12",
+            coupe: true,
+            starHeadliner: true
+        }
+
+        let myGhost = new CarPrototype(ghostParams);
+        myGhost.drive();
+        myGhost.stop();
+        myGhost.drive();
+        myGhost.stop();
+        myGhost.start();
+    </script>
+</body>
+</html>

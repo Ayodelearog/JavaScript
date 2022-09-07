@@ -20,7 +20,7 @@ var fiat = {
     },
     drive: function() {
         if (this.started) {
-            if (this.started > 0) {
+            if (this.fuel > 0) {
                 alert(this.make + " " + this.model + " goes zoom zoom!");
                 this.fuel--;
             } else {
